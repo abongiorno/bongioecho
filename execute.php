@@ -20,6 +20,9 @@ $text = trim($text);
 $text = strtolower($text);
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $username . " " . $text . " " .  $date->format('Y-m-d H:i:s'));
+
+$date = $date->format('Y-m-d H:i:s')
+
+$parameters = array('chat_id' => $chatId, "text" => $username . " " . $text . " " . $date );
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
