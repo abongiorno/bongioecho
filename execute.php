@@ -20,19 +20,7 @@ $text = trim($text);
 $text = strtolower($text);
 
 header("Content-Type: application/json");
-
-try {
-	$parameters = array('chat_id' => $chatId, "text" => $text );
-
-} catch (Exception $e) {
-    
-	$ex = 'Caught exception: ',  $e->getMessage(), "\n";
-	
-	$parameters = array('chat_id' => $chatId, "text" => $ex);
-}
-
-
-
+$parameters = array('chat_id' => $chatId, "text" => $text );
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
 
