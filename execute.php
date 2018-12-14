@@ -28,7 +28,7 @@ header("Content-Type: application/json");
 
 
 try {
-	$parameters = array('chat_id' => $chatId, "text" => ( $username . $lastname ) );
+	$parameters = array('chat_id' => $chatId, "text" => $username . $lastname  );
 
 } catch (Exception $e) {
     
