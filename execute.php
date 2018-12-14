@@ -21,14 +21,8 @@ $text = strtolower($text);
 
 header("Content-Type: application/json");
 
-//$date = $date->format('Y-m-d H:i:s');
-
-//$parameters = array('chat_id' => $chatId, "text" => $username . " " . $text . " " . $date );
-
-
-
 try {
-	$parameters = array('chat_id' => $chatId, "text" => $username );
+	$parameters = array('chat_id' => $chatId, "text" => $text );
 
 } catch (Exception $e) {
     
