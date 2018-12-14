@@ -25,6 +25,19 @@ header("Content-Type: application/json");
 
 //$parameters = array('chat_id' => $chatId, "text" => $username . " " . $text . " " . $date );
 
-$parameters = array('chat_id' => $chatId, "text" => ( $username . $lastname );
+
+
+try {
+	$parameters = array('chat_id' => $chatId, "text" => ( $username . $lastname );
+
+} catch (Exception $e) {
+    
+	$ex = 'Caught exception: ',  $e->getMessage(), "\n";
+	
+	$parameters = array('chat_id' => $chatId, "text" => $ex);
+}
+
+
+
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
