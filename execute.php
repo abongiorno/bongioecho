@@ -20,7 +20,7 @@ $text = trim($text);
 $text = strtolower($text);
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => "messageId: " . $messageId );
+$parameters = array('chat_id' => $chatId, "text" => "messageId: " . $messageId . " - firstname: " . $firstname . " - last name: " . $lastname);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
 
